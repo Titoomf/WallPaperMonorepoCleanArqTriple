@@ -4,7 +4,7 @@ import 'package:dio/dio.dart';
 import '../../../shared/constants_api.dart';
 import '../../domain/entities/photo_entity.dart';
 import '../../errors/error.dart';
-import '../../infra/datasource/fetch_photo_datasource.dart';
+import '../../infra/datasource/get_fetch_photo_datasource.dart';
 import '../../infra/model/photo_entity_model.dart';
 
 class ApiFetchPhotoDataSource implements FetchPhotoDatasource {

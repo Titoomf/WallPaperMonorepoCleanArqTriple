@@ -1,6 +1,6 @@
 import 'package:clean_arq_wallpaper_monorepo/app/modules/wallpaper/domain/entities/photo_entity.dart';
-import 'package:clean_arq_wallpaper_monorepo/app/modules/wallpaper/domain/repositories/fetch_photo_repository.dart';
-import 'package:clean_arq_wallpaper_monorepo/app/modules/wallpaper/domain/usecases/fetch_photo_usecase.dart';
+import 'package:clean_arq_wallpaper_monorepo/app/modules/wallpaper/domain/repositories/get_fetch_photo_repository.dart';
+import 'package:clean_arq_wallpaper_monorepo/app/modules/wallpaper/domain/usecases/get_fetch_photo_usecase.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';

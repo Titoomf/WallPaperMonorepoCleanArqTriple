@@ -6,7 +6,6 @@ import '../entities/photo_entity.dart';
 abstract class FetchPhotoRepository {
   // Buscar as fotos
   Future<Either<FetchPhotoException, List<PhotoEntity>>> fetchPhotos({
-    String? query,
     required int page,
     required int perPage,
   });

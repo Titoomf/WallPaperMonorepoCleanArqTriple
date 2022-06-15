@@ -1,5 +1,5 @@
 import 'package:clean_arq_wallpaper_monorepo/app/modules/wallpaper/domain/entities/photo_entity.dart';
-import 'package:clean_arq_wallpaper_monorepo/app/modules/wallpaper/external/datasource/fetch_api_photo_datasource.dart';
+import 'package:clean_arq_wallpaper_monorepo/app/modules/wallpaper/external/datasource/get_fetch_api_photo_datasource.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
