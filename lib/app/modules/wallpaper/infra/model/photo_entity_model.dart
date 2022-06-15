@@ -1,4 +1,4 @@
-import '../../../domain/entities/photo_entity.dart';
+import '../../domain/entities/photo_entity.dart';
 
 class PhotoEntityModel extends PhotoEntity {
   PhotoEntityModel({

@@ -24,11 +24,11 @@ class FetchPhotosUsecaseImpl implements FetchPhotosUsecase {
     required int perPage,
   }) async {
     if (page < 1 || perPage < 1) {
-      return left(PhotoParamsException('Parâmetros não encontrado'));
+      return left(PhotoException('Error!!,photo não encontrada'));
     }
 
     if (query != null && query.trim().isEmpty) {
-      return left(PhotoParamsException('Favor preencher a pesquisa'));
+      return left(PhotoException('Favor preencha o campo!!,'));
     }
     return await _repository.fetchPhotos(
       query: query,

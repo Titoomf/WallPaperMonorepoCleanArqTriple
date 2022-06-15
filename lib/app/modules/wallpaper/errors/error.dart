@@ -4,8 +4,8 @@ abstract class FetchPhotoException implements Exception {
   FetchPhotoException(this.message);
 }
 
-class PhotoParamsException extends FetchPhotoException {
-  PhotoParamsException(
+class PhotoException extends FetchPhotoException {
+  PhotoException(
     String message,
   ) : super(message);
 }
