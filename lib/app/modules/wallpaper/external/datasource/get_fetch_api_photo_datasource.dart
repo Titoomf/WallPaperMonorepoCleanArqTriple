@@ -30,31 +30,3 @@ class ApiFetchPhotoDataSource implements FetchPhotoDatasource {
     }
   }
 }
-
-
-
-
-
-
-//   @override
-//   Future<List<PhotoEntity>> searchPhotos(
-//       {required String query,
-//       required int apiPage,
-//       required int perPage}) async {
-//     try {
-//       final result = await service
-//           .get("search?query=$query&page=$apiPage&per_page=$perPage");
-
-//       var list = result['photos'] as List;
-
-//       List<PhotoEntity> photos =
-//           list.map((e) => PhotoEntityDto.fromMap(e)).toList();
-
-//       return photos;
-//     } on LostInternetConnection catch (_) {
-//       throw PhotoDatasourceException('Falha na conexão!');
-//     } catch (e) {
-//       throw PhotoDatasourceException(e.toString());
-//     }
-//   }
-// }

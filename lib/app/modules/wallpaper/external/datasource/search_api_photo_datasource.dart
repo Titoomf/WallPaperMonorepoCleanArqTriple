@@ -12,7 +12,7 @@ class ApiSearchPhotoDataSource implements SeachPhotoDatasource {
   ApiSearchPhotoDataSource(this.dio);
   @override
   Future<List<PhotoEntity>> searchPhotos(
-      {required String query, required int page, required int perPage}) async {
+      {required int page, required int perPage, String? query}) async {
     try {
       final response = await dio.get(
         '${ConstantsApiUrls.searchPhotoBytext}?query=$query&page=$page&per_page=$perPage',
