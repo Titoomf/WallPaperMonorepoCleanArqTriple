@@ -16,8 +16,8 @@ class PhotoRepositoryException extends FetchPhotoException {
   ) : super(message);
 }
 
-class PhotoDatasourceException extends FetchPhotoException {
-  PhotoDatasourceException(
+class PhotoDataSourceException extends FetchPhotoException {
+  PhotoDataSourceException(
     String message,
   ) : super(message);
 }

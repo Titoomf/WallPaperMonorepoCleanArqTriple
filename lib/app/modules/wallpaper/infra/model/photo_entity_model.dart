@@ -13,9 +13,10 @@ class PhotoEntityModel extends PhotoEntity {
     };
   }
 
+// construtor factory ele me retorna a instancia da super classe ou subclasses
   factory PhotoEntityModel.fromMap(Map<String, dynamic> map) {
     return PhotoEntityModel(
-      originalPath: map['src']['tiny'] ?? '',
+      originalPath: map['src']['original'] ?? '',
     );
   }
 }

@@ -1,5 +1,5 @@
 class SearchCuratedPhotoResponse {
-  static final data = {
+  static final dataSearch = {
     {
       "page": 1,
       "per_page": 1,
