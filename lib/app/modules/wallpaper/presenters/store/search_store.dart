@@ -1,3 +1,4 @@
+import 'package:clean_arq_wallpaper_monorepo/app/modules/wallpaper/domain/usecases/get_download_photo_usecase.dart';
 import 'package:flutter_triple/flutter_triple.dart';
 
 import '../../domain/usecases/get_fetch_photo_usecase.dart';
@@ -6,12 +7,13 @@ import 'states/search_states_page.dart';
 
 class FetchPhotosStore extends NotifierStore<PhotoException, FetchPhotosState> {
   final IGetFetchPhotosUsecase _fetchPhotousecase;
+  final IGetDownloadPhotoUsecase downloadPhotoUsecase;
 
-  FetchPhotosStore(this._fetchPhotousecase) : super(FetchPhotosState.empty());
+  FetchPhotosStore(this._fetchPhotousecase, this.downloadPhotoUsecase)
+      : super(FetchPhotosState.empty());
 
-  void fetchPhotos() async {
+  Future<void> fetchPhotos() async {
     setLoading(true);
-
     _sumPageValue();
 
     final usecaseResponse = await _fetchPhotousecase(
@@ -19,10 +21,16 @@ class FetchPhotosStore extends NotifierStore<PhotoException, FetchPhotosState> {
       perPage: state.perPage,
       query: state.query,
     );
-    usecaseResponse.fold((l) {
-      _subPageValue();
-      setError(l);
-    }, (r) => update(state.copyWith(photos: r, perPage: 1)));
+    usecaseResponse.fold(
+      (l) {
+        setError(l);
+        _subPageValue();
+      },
+      (r) => update(
+        state.copyWith(photos: r, perPage: 1),
+      ),
+    );
+    setLoading(false);
   }
 
   void _subPageValue() {
@@ -41,6 +49,17 @@ class FetchPhotosStore extends NotifierStore<PhotoException, FetchPhotosState> {
     update(state.copyWith(query: query, page: 1));
   }
 
+  // Future<void> downlodImageApi() async {
+  //   final usecaseReponse = await downloadUsecase(imagePath: imagePath(
+  //  imagePath:imagePath)
+
+  //   downloadUsecase.fold(
+  //     (l) =>
+  //       ),
+  //     ),
+  //     (r) =>
+  //   );
+  // }
   // void sumPerpage(int perPage) {
   //   final actualPerpage = state.perPage;
   //   final nextPerpage = actualPerpage + 1;
@@ -56,4 +75,5 @@ class FetchPhotosStore extends NotifierStore<PhotoException, FetchPhotosState> {
   // void setQuery(query) => query.value = query;
 
   // void resetQuery() => _query.value = null;
+// }
 }

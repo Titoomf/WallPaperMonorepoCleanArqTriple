@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:dartz/dartz.dart';
 
 import '../../domain/repositories/download_photo_repository.dart';
@@ -12,12 +10,12 @@ class DownloadPhotosRepository implements IDownloadPhotoRepository {
   DownloadPhotosRepository(this.dataSource);
 
   @override
-  Future<Either<PhotoException, File>> downloadPhoto(
+  Future<Either<PhotoException, String>> downloadPhoto(
       {required String imagePath}) async {
     try {
-      final result = await dataSource.downloadPhoto(imagePath);
+      final result = await dataSource.download(imagePath);
 
-      return right(result);
+      return right('result');
     } catch (e) {
       return left(PhotoException(e.toString()));
     }

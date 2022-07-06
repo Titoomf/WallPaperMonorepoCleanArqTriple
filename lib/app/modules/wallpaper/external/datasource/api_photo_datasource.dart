@@ -16,10 +16,9 @@ class PhotoDataSource implements IPhotoDataSource {
       {required int page, required int perPage}) async {
     try {
       final response = await dio.get(
-        '${ConstantsApiUrls.searchCuratedPhoto}?page=$page&per_page=$perPage',
+        '${ConstantsApiUrls.searchPhoto}?page=$page&per_page=$perPage',
         options: Options(
           headers: {
-            'baseUrl': ConstantsApiUrls.baseUrl,
             'Authorization': ConstantsApiUrls.apiKey,
           },
         ),
@@ -40,7 +39,7 @@ class PhotoDataSource implements IPhotoDataSource {
       {required int page, required int perPage, String? query}) async {
     try {
       final response = await dio.get(
-        '${ConstantsApiUrls.searchPhoto}?query=$query&page=$page&per_page=$perPage',
+        '${ConstantsApiUrls.curatedPhoto}?query=$query&page=$page&per_page=$perPage',
         options: Options(
           headers: {
             'Authorization': ConstantsApiUrls.apiKey,

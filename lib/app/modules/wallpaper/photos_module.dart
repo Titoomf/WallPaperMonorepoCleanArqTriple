@@ -27,10 +27,10 @@ class PhotosModule extends Module {
 
         // datasource
         Bind.singleton<IPhotoDataSource>((i) => PhotoDataSource(i())),
-        Bind.singleton<IDownloadDataSource>((i) => DownloadDataSource(i())),
+        Bind.singleton<IDownloadDataSource>((i) => DownloadDataSource()),
 
         //store
-        Bind.singleton((i) => FetchPhotosStore(i())),
+        Bind.singleton((i) => FetchPhotosStore(i(), i())),
       ];
   @override
   List<ModularRoute> get routes => [

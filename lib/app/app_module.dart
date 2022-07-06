@@ -14,7 +14,10 @@ class AppModule extends Module {
         ModuleRoute('/', module: PhotosModule()),
         ChildRoute(
           '/photoPage',
-          child: (context, args) => PhotoPage(imagePath: args.data),
+          child: (context, args) => PhotoPage(
+            imagePath: args.data,
+            // onPressed: () {},
+          ),
         ),
       ];
 }

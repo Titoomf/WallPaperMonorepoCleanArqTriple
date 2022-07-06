@@ -38,7 +38,9 @@ class _HomePageListPhotosPageState extends State<HomePageListPhotosPage> {
         ],
         bottom: CustomSearchBarWidget(
           controller: controller,
-          onChanged: (value) => photosStore.updateQuery(controller.text),
+          onChanged: (value) => photosStore.updateQuery(
+            controller.text,
+          ),
         ),
       ),
       body: Column(

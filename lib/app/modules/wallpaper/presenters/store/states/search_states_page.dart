@@ -17,7 +17,7 @@ class FetchPhotosState {
 
   FetchPhotosState.empty({
     this.page = 0,
-    this.perPage = 5,
+    this.perPage = 10,
     this.query = 'Nature',
     this.photos = const [],
   });

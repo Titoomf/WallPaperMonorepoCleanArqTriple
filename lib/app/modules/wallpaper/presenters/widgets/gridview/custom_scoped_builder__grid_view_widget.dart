@@ -67,19 +67,16 @@ class _CustomGridViewScopedBuilderWidgetState
           ),
         ],
       ),
-      onLoading: (_) => const Center(child: CircularProgressIndicator()),
       onState: (_, state) {
         if (state.photos.isEmpty) {
           photosStore.fetchPhotos();
-          return Container();
+          return const Center(child: CircularProgressIndicator());
         }
 
         return Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-              // teste
-
               Expanded(
                 child: GridView.builder(
                   //cria um layout com blocos que têm uma extensão máxima de eixo cruzado.
@@ -98,11 +95,6 @@ class _CustomGridViewScopedBuilderWidgetState
                   },
                 ),
               ),
-              // if (state is FetchPhotosLoadingState)
-              //   const Padding(
-              //     padding: EdgeInsets.all(8),
-              //     child: Center(child: CircularProgressIndicator()),
-              //   ),
             ],
           ),
         );
